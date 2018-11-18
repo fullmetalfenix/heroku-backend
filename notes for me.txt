@@ -1,0 +1,51 @@
+fetch('http://localhost:1337/restaurants/?is_favorite=false').then( x => x.json()).then(x => console.log(x))
+
+match reviews to what is in there
+
+Denise [1 day ago]
+```       Reviews.forEach(function (Review) {
+        var maxReview = (the highest of the current id number and the previous id number)
+
+      var new_max = maxReview
+ }
+ 
+
+        }); (edited)
+
+
+self.addEventListener("fetch", event => {
+ event.respondWith(
+   caches.match(event.request).then(response => {
+     const fetchRequest = event.request.clone();
+     return (
+       response ||
+       fetch(fetchRequest)
+         .then(response => {
+           const responseToCache = response.clone();
+           caches.open(CACHE_NAME).then(cache => {
+             cache.put(event.request, responseToCache);
+           });
+           return response;
+         })
+         .catch(error => {
+           console.log("also no worky" + error);
+           return caches.match("offline.html");
+         })
+     );
+   })
+ );
+});
+
+
+black red and yellow color scheme for a website?
+
+
+
+static fetch post to  contetn type json w dynamic url
+
+if res.ok store add ??
+
+index on reviews??? 
+
+
+
